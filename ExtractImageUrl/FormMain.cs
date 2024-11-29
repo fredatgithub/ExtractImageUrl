@@ -15,6 +15,7 @@ namespace ExtractImageUrl
     private void FormMain_Load(object sender, EventArgs e)
     {
       textBoxTarget.Text = string.Empty;
+      TextBoxSource_TextChanged(sender, e);
     }
 
     private void QuitterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,6 +55,11 @@ namespace ExtractImageUrl
       }
 
       return result;
+    }
+
+    private void TextBoxSource_TextChanged(object sender, EventArgs e)
+    {
+      buttonExtract.Enabled = textBoxSource.Text.Length > 0;
     }
   }
 }
